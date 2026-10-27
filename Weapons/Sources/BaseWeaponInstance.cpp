@@ -1,5 +1,5 @@
 
-#include "BaseWeaponInstance.h"
+#include "../BaseWeaponInstance.h"
 
 void BaseWeaponInstance::Repair(std::size_t val) {
 
