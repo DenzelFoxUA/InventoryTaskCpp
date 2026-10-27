@@ -1,0 +1,8 @@
+//
+// Created by denzelfox on 27.10.26.
+//
+
+#ifndef INVENTORYTASK_IREPAIRABLE_H
+#define INVENTORYTASK_IREPAIRABLE_H
+
+#endif //INVENTORYTASK_IREPAIRABLE_H

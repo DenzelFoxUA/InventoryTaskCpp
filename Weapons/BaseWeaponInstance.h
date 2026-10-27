@@ -1,0 +1,16 @@
+//
+// Created by denzelfox on 27.10.26.
+//
+
+#ifndef INVENTORYTASK_BASEWEAPONINSTANCE_H
+#define INVENTORYTASK_BASEWEAPONINSTANCE_H
+
+
+
+class BaseWeaponInstance {
+
+};
+
+
+
+#endif //INVENTORYTASK_BASEWEAPONINSTANCE_H
