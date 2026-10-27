@@ -1,8 +1,16 @@
-//
-// Created by denzelfox on 27.10.26.
-//
 
-#ifndef INVENTORYTASK_IRANGED_H
-#define INVENTORYTASK_IRANGED_H
+#ifndef IRANGED_H
+#define IRANGED_H
+#include <cstddef>
 
-#endif //INVENTORYTASK_IRANGED_H
+class IRanged
+{
+
+public:
+   virtual void Reload() = 0;
+   [[nodiscard]] virtual std::size_t GetCurrentAmmoCount() const = 0;
+   virtual ~IRanged() = default;
+
+};
+
+#endif //IRANGED_H

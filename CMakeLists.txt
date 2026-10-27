@@ -14,9 +14,20 @@ add_executable(InventoryTask main.cpp
         Classes/Inventory.h
         Classes/Sources/Character.cpp
         Classes/Character.h
-        Interfaces/ICharacter.cpp
-        Interfaces/ICharacter.h)
+        Interfaces/ICharacter.h
+        Classes/Sources/DurableItem.cpp
+        Classes/DurableItem.h
+        Interfaces/IRanged.h
+        Weapons/Sources/Dagger.cpp
+        Weapons/Dagger.h
+        Interfaces/IRepairable.h
+        Weapons/BaseWeaponInstance.cpp
+        Weapons/BaseWeaponInstance.h
+)
 
 target_include_directories(InventoryTask PRIVATE
         "${CMAKE_CURRENT_SOURCE_DIR}/Classes"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Armor"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Weapons"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Interfaces"
 )

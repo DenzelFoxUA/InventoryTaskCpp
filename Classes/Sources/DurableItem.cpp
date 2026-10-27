@@ -1,5 +1,7 @@
-//
-// Created by denzelfox on 27.10.26.
-//
 
-#include "../DurableItem.h"
+#include "DurableItem.h"
+
+size_t DurableItem::GetDurability() const
+{
+    return durability;
+}

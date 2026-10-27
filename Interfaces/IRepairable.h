@@ -1,8 +1,14 @@
-//
-// Created by denzelfox on 27.10.26.
-//
 
-#ifndef INVENTORYTASK_IREPAIRABLE_H
-#define INVENTORYTASK_IREPAIRABLE_H
+#ifndef IREPAIRABLE_H
+#define IREPAIRABLE_H
+#include <cstddef>
 
-#endif //INVENTORYTASK_IREPAIRABLE_H
+class IRepairable
+{
+public:
+    virtual void Repair(std::size_t value) = 0;
+    [[nodiscard]] virtual std::size_t GetCurrentDurability() const = 0;
+    virtual ~IRepairable() = default;
+};
+
+#endif //IREPAIRABLE_H

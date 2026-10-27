@@ -1,5 +1,17 @@
-//
-// Created by denzelfox on 27.10.26.
-//
 
 #include "BaseWeaponInstance.h"
+
+void BaseWeaponInstance::Repair(std::size_t val) {
+
+    if(currentDurability + val >= this->GetDurability())
+    {
+        currentDurability = GetDurability();
+    }
+
+    currentDurability += val;
+}
+
+std::size_t BaseWeaponInstance::GetCurrentDurability() const
+{
+    return currentDurability;
+}

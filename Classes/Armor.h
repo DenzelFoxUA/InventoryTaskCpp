@@ -1,21 +1,37 @@
 
 #ifndef ARMOR_H
 #define ARMOR_H
-#include "Item.h"
 
+#include "DurableItem.h"
 
-class Armor : public Item
+enum ArmorType
+{
+    NotSet = 0,
+    Light = 1,
+    Medium = 10,
+    Heavy = 20
+};
+
+class Armor : public DurableItem
 {
 private:
     std::size_t defencePoints = 0;
+    ArmorType armorType = NotSet;
 public:
     Armor() = default;
-    Armor(std::size_t defencePoints,
-        std::string a_name,
+    Armor(std::string a_name,
         unsigned int weight_kg,
-        unsigned int price) :
-    Item(std::move(a_name), weight_kg, price),
-    defencePoints(defencePoints) {}
+        unsigned int price,
+        std::size_t durability,
+        std::size_t defencePoints) :
+    DurableItem(std::move(a_name), weight_kg, price, durability),
+    defencePoints(defencePoints)
+    {
+        armorType = weight_kg <= 0 ? ArmorType::NotSet
+          : weight_kg < ArmorType::Medium ? ArmorType::Light
+          : weight_kg < ArmorType::Heavy  ? ArmorType::Medium
+          : ArmorType::Heavy;
+    }
 
     Armor(const Armor& armor)  = default;
     Armor& operator=(const Armor& armor) noexcept = default;

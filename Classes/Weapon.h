@@ -7,25 +7,25 @@
 
 #include <utility>
 
-#include "Item.h"
+#include "DurableItem.h"
 
 
-class Weapon : public Item
+class Weapon : public DurableItem
 {
 private:
     size_t damage = 0;
 
 public:
-    Weapon() : Item() {
-        damage = 0;
-    }
+    Weapon() = default;
 
-    Weapon(size_t damage,
-        std::string w_name,
+    Weapon(std::string w_name,
         unsigned int weight_kg,
-        unsigned int price_coins) :
-    Item(std::move(w_name), weight_kg, price_coins),
-    damage(damage){}
+        unsigned int price_coins,
+        std::size_t damage,
+        std::size_t durability) :
+    DurableItem(std::move(w_name), weight_kg, price_coins, durability),
+    damage(damage)
+    {}
 
     Weapon& operator=(const Weapon& other) = default;
     Weapon(const Weapon& other) = default;

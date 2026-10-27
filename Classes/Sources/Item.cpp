@@ -1,7 +1,10 @@
-//
-// Created by denzelfox on 27.10.26.
-//
+
 #include "Item.h"
+
+unsigned int Item::GetID() const
+{
+    return id;
+}
 
 std::string Item::GetName() const
 {

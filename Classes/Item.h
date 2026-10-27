@@ -20,14 +20,17 @@
 class Item
 {
 private:
+
+    unsigned int id = 0;
     std::string name = "";
     unsigned int weight = 0;
     unsigned int price = 0;
 
 public:
     Item() = default;
-    Item(std::string _name, unsigned int weight_kg, unsigned int price_coins)
+    Item(unsigned int item_id, std::string _name, unsigned int weight_kg, unsigned int price_coins)
     {
+        id = item_id;
         name = _name;
         weight = weight_kg;
         price = price_coins;
@@ -39,6 +42,8 @@ public:
     Item(Item&& other) noexcept = default;
 
     //------------------------------------------
+    [[nodiscard]] unsigned int GetID() const;
+
     [[nodiscard]] std::string GetName() const;
 
     [[nodiscard]] unsigned int GetWeight() const;

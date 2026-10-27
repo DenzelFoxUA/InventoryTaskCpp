@@ -4,7 +4,7 @@
 #include "Weapon.h"
 
 
-class IronDagger : public Weapon
+class Dagger : public Weapon
 {
 
 private:
@@ -12,19 +12,19 @@ private:
 
 
 public:
-    IronDagger() = default;
+    Dagger() = default;
 
-    IronDagger(const IronDagger& other) = default;
-    IronDagger& operator=(const IronDagger& other) = default;
+    Dagger(const Dagger& other) = default;
+    Dagger& operator=(const Dagger& other) = default;
 
-    IronDagger(IronDagger&& other) noexcept = default;
-    IronDagger& operator=(IronDagger&& other) noexcept = default;
+    Dagger(Dagger&& other) noexcept = default;
+    Dagger& operator=(Dagger&& other) noexcept = default;
 
-    ~IronDagger() override = default;
+    ~Dagger() override = default;
 
     //-------------------------------------------------
 
-    
+
 
 };
 
