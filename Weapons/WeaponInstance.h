@@ -58,13 +58,7 @@ public:
 
     [[nodiscard]] std::size_t GetCurrentDurability() const override;
 
-    [[nodiscard]] std::size_t GetCurrentDamage() const
-    {
-        double durabilityPercentage = static_cast<double>(currentDurability) / weaponModel->GetDurability();
-        double resDmg = static_cast<double>(currentDamage) * durabilityPercentage;
-
-        return static_cast<std::size_t>(std::round(resDmg));
-    }
+    [[nodiscard]] std::size_t GetCurrentDamage() const;
 };
 
 #endif //BASEWEAPONINSTANCE_H
